@@ -1,0 +1,46 @@
+.card {
+    box-shadow: 0 0 10px 0 #c3c3c3;
+    margin: 2%;
+    border-radius: 5px;
+    width: 46%;
+    transition-duration: 300ms;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card:hover {
+    box-shadow: 0 0 15px 0 #c3c3c3;
+    transform: scale(1.03);
+}
+
+.userInfo{
+    padding: 10px;
+    width: 60%;
+}
+
+.map {
+    width: 40%;
+    min-height: 215px;
+    position: relative;
+    /* max-width: 200px; */
+    /* border-left: 1px solid #000; */
+}
+
+.handler {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    padding: 3px;
+}
+
+.handler span {
+    display: inline-block;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.handler span:hover {
+    color: green;
+}

@@ -1,0 +1,4 @@
+.listWrap {
+    display: flex;
+    flex-wrap: wrap;
+}

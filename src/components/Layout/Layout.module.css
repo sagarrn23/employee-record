@@ -1,0 +1,17 @@
+.container {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.nav {
+    padding: 20px;
+    text-align: center;
+    /* border-bottom: 1px solid #333; */
+    box-shadow: 0px 1px 12px 0 #d5d5d5;
+}
