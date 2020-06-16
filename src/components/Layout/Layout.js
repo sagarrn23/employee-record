@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './Layout.module.css';
 import Nav from './Nav/Nav';
-import EmployeeList from "../../containers/Employees/Employees";
+import EmployeeList from "../../containers/EmployeeList/EmployeeList";
 
 const Layout = () => {
     return(
@@ -10,9 +10,7 @@ const Layout = () => {
                 <Nav />
             </header>
             <main className={classes.wrapper}>
-                <ul className={classes.content}>
-                    <EmployeeList />
-                </ul>
+                <EmployeeList />
             </main>
         </div>
     )

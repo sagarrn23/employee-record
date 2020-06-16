@@ -1,0 +1,17 @@
+.search input {
+    max-width: 500px;
+    width: 100%;
+    border-radius: 50px;
+    border: 1px solid #000;
+    margin: 30px auto;
+    min-height: 40px;
+    display: block;
+    padding: 5px 20px;
+}
+
+.search input:focus,
+.search input:hover {
+    box-shadow: 0 0 15px 0 #666;
+    /* border: 0; */
+    outline: none;
+}
