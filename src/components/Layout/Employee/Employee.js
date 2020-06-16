@@ -32,7 +32,7 @@ const Employee = (props) => {
                     <FontAwesomeIcon icon={faEdit} />
                 </span>
                 <span>
-                    <FontAwesomeIcon icon={faTrash} />
+                    <FontAwesomeIcon onClick={props.delete} icon={faTrash} />
                 </span>
             </div>
         </li>

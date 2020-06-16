@@ -21,11 +21,23 @@ class EmployeeList extends Component {
 
     }
 
+    deleteHandler = (index) => {
+        const employees = [...this.state.empData];
+        employees.splice(index, 1);
+        this.setState({
+            empData: employees
+        });
+    }
+
     render() {
         return (
             <ul className={classes.listWrap}>
-                {this.state.empData.map((data) => {
-                    return <Employee key={data.id} emp={data} />;
+                {this.state.empData.map((data, index) => {
+                    return <Employee 
+                                key={data.id} 
+                                emp={data} 
+                                delete={() => this.deleteHandler(index)}
+                            />
                 })}
             </ul>
         )
