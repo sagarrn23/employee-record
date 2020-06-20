@@ -15,7 +15,7 @@ class EmployeeList extends Component {
     }
 
     getUsers = () => {
-        axios.get("http://localhost:3000/users")
+        return axios.get("http://localhost:3000/users")
             .then(response => {
                 this.setState({
                     empData: response.data,
@@ -43,24 +43,17 @@ class EmployeeList extends Component {
 
         const regex = new RegExp(value, 'gi');
 
-        const filteredEmp = employees.filter((data) => {
-            return data.name.match(regex) || data.username.match(regex);
-        });
+        const filteredEmp = employees.filter(data =>  data.name.match(regex) || data.username.match(regex));
 
         this.setState({
             empData: filteredEmp
         });
     }
     
-    searchHandler = (e) => {
+    searchHandler = async(e) => {
         const searchQuery = e.target.value;
         if (e.keyCode === 46 || e.keyCode === 8) {
-                axios.get("http://localhost:3000/users")
-                    .then(response => {
-                        this.setState({
-                            empData: response.data,
-                        })
-                    })
+                await this.getUsers()
                     .then(() => {
                         this.searchInState(searchQuery)
                     })
