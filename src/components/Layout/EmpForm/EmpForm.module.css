@@ -1,0 +1,52 @@
+.form {
+    box-shadow: 0 0 15px 0 #a8a8a8;
+    border-radius: 5px;
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form p {
+    display: flex;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.form label {
+    width: 20%;
+}
+
+.form input {
+    width: 80%;
+    min-height: 40px;
+    font-size: 20px;
+    padding: 0 10px;
+}
+
+.form h4 {
+    text-align: center;
+    margin: 10px 0 30px;
+    font-size: 20px;
+}
+
+.form fieldset {
+    border: 0;
+    border-radius: 5px;
+    /* margin-bottom: 30px; */
+    padding: 0px;
+    width: 100%;
+}
+
+.form button {
+    padding: 10px 20px;
+    background-color: green;
+    border: 1px solid #999;
+    text-align: center;
+    cursor: pointer;
+    font-weight: 700;
+    max-width: 150px;
+    color: #fff;
+}

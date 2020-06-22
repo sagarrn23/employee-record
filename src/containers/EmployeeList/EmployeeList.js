@@ -4,7 +4,7 @@ import Employee from '../../components/Layout/Employee/Employee';
 import classes from './EmployeeList.module.css';
 import Aux from '../../hoc/Aux/Aux';
 import Search from '../../components/Layout/Search/Search';
-import search from '../../components/Layout/Search/Search';
+import EmpForm from '../../components/Layout/EmpForm/EmpForm';
 
 class EmployeeList extends Component {
     constructor(props) {
@@ -64,7 +64,7 @@ class EmployeeList extends Component {
 
     render() {
         return (
-                <Aux>  
+                <Aux>
                     <Search search={(e) => this.searchHandler(e)}/>
                     <ul className={classes.listWrap}>
                         {this.state.empData.map((data, index) => {
@@ -75,6 +75,7 @@ class EmployeeList extends Component {
                             />
                         })}
                     </ul>
+                    <EmpForm />
                 </Aux>
         )
     }
