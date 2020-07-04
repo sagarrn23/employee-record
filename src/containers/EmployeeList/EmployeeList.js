@@ -5,6 +5,7 @@ import classes from './EmployeeList.module.css';
 import Aux from '../../hoc/Aux/Aux';
 import Search from '../../components/Layout/Search/Search';
 import EmpForm from '../../components/Layout/EmpForm/EmpForm';
+import {Route} from 'react-router-dom';
 
 class EmployeeList extends Component {
     constructor(props) {
@@ -30,7 +31,6 @@ class EmployeeList extends Component {
     deleteHandler = (id) => {
         axios.delete('http://localhost:3000/users/' + id)
             .then(response => {
-                console.log(response.data);
                 console.log(`${id} is deleted.`);                
                 this.getUsers();
             });
@@ -62,20 +62,33 @@ class EmployeeList extends Component {
         }
     }
 
+    addUser = () => {
+
+    }
+
     render() {
         return (
                 <Aux>
-                    <Search search={(e) => this.searchHandler(e)}/>
-                    <ul className={classes.listWrap}>
-                        {this.state.empData.map((data, index) => {
-                            return <Employee 
-                                key={data.id} 
-                                emp={data} 
-                                delete={() => this.deleteHandler(data.id)}
-                            />
-                        })}
-                    </ul>
-                    <EmpForm />
+                    <Route path='/' exact render={()=>{
+                        return(
+                            <Aux>
+                                <Search search={(e) => this.searchHandler(e)}/>
+                                <ul className={classes.listWrap}>
+                                    {this.state.empData.map((data) => {
+                                        return <Employee 
+                                            key={data.id} 
+                                            emp={data} 
+                                            delete={() => this.deleteHandler(data.id)}
+                                        />
+                                    })}
+                                </ul>
+                            </Aux>
+                        )
+                    }} />
+                    
+                    <Route path="/add-new" exact component={EmpForm}/>
+                    <Route path="/user/:id" exact component={EmpForm}/>
+                    {/* <EmpForm /> */}
                 </Aux>
         )
     }

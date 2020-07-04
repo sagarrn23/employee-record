@@ -2,9 +2,12 @@ import React from 'react';
 import classes from './Employee.module.css';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
-import EmpLocation from './Map/Map';
+// import EmpLocation from './Map/Map';
+import {Link, withRouter} from 'react-router-dom';
 
 const Employee = (props) => {
+    console.log(props);
+    
     return(
         <li className={classes.card}>
             <div className={classes.userInfo}>
@@ -25,11 +28,13 @@ const Employee = (props) => {
             </div>
 
             <div className={classes.map}>
-                <EmpLocation coords={props.emp.address.geo} />
+                {/* <EmpLocation coords={props.emp.address.geo} /> */}
             </div>
             <div className={classes.handler}>
                 <span>
-                    <FontAwesomeIcon icon={faEdit} />
+                    <Link to={'/user/'+ props.emp.id}>
+                        <FontAwesomeIcon icon={faEdit} />
+                    </Link>
                 </span>
                 <span>
                     <FontAwesomeIcon onClick={props.delete} icon={faTrash} />
@@ -39,4 +44,4 @@ const Employee = (props) => {
     )
 }
 
-export default Employee;
+export default withRouter(Employee);

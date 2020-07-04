@@ -1,10 +1,15 @@
 import React, {Component} from 'react';
 import './App.module.css';
 import Layout from './components/Layout/Layout';
+import { BrowserRouter } from 'react-router-dom';
 
 class ERM extends Component {
   render() {
-    return <Layout/>
+    return (
+      <BrowserRouter>
+        <Layout/>
+      </BrowserRouter>
+    )
   }
 }
 
