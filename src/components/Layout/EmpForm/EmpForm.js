@@ -66,19 +66,32 @@ class EmpForm extends React.Component {
         });
     }
 
-    updateUser = () => {
-        axios
-          .put(
-            "http://localhost:3000/users/" + this.state.user.id,
-            this.state.user
-          )
-          .then((respsonse) => console.log(respsonse));
+    updateUser = (e) => {
+        e.preventDefault();
+        if (this.requiredValidation()){
+            axios
+              .put(
+                "http://localhost:3000/users/" + this.state.user.id,
+                this.state.user
+              )
+              .then((respsonse) => console.log(respsonse));
+        }
     }
 
-    addUser = () => {
-        axios
-            .post("http://localhost:3000/users/", this.state.user)
-            .then((respsonse) => console.log(respsonse));
+    addUser = (e) => {
+        e.preventDefault();
+        if (this.requiredValidation()){
+            axios
+                .post("http://localhost:3000/users/", this.state.user)
+                .then((respsonse) => console.log(respsonse));
+        }
+    }
+
+    requiredValidation = () => {
+        if(this.state.user.name && this.state.user.username) {
+            return true;
+        }
+        return false;
     }
 
     render(){
